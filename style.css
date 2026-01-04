@@ -1,0 +1,167 @@
+/* 全局基础样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #050505; /* 纯黑背景 */
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
+/* Header 布局：宽幅大图及居中控制 */
+#main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60vh;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* 水平居中 */
+    justify-content: center; /* 垂直居中 */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* 背景图叠加深色渐变 */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(5,5,5,1)), 
+                url('https://images.unsplash.com/photo-1611974717482-58a643b22100?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+}
+
+#main-title {
+    color: #00ff88; /* 科技绿 */
+    font-size: 4rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+/* 按钮样式：居中且带动画效果 */
+.precis-btn {
+    margin-top: 30px;
+    padding: 12px 35px;
+    background: transparent;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: opacity 0.4s ease, visibility 0.4s, background 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.precis-btn:hover {
+    background: #00ff88;
+    color: #000;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* 主体内容布局 */
+.container {
+    display: flex;
+    margin-top: 65vh; /* 避开固定 header */
+    padding: 0 5% 50px 5%;
+    gap: 50px;
+}
+
+.content-area {
+    flex: 2;
+    line-height: 1.8;
+    font-size: 1.15rem;
+}
+
+.content-area h2 {
+    color: #00ff88;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+}
+
+.content-area h3 {
+    color: #ffffff;          /* 颜色设为纯白 */
+    font-size: 1.8rem;       /* 字体大小，1.8rem 比 h2 的默认大小稍大，比大标题小 */
+    margin-top: 30px;        /* 距离上方文字的间距 */
+    margin-bottom: 15px;     /* 距离下方文字的间距 */
+    font-weight: 600;        /* 字体加粗，增加专业感 */
+    letter-spacing: 1px;     /* 字母间距稍微拉开一点点 */
+}
+
+.scrolling-content-placeholder {
+    height: auto;
+    border-left: 2px solid #1a1a1a;
+    padding-left: 30px;
+    margin-top: 30px;
+    color: #888;
+}
+
+/* 右侧股票滚动栏 */
+.stock-sidebar {
+    flex: 1;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 20px;
+    height: 500px;
+    position: sticky;
+    top: 120px;
+    border-radius: 4px;
+}
+
+.stock-sidebar h3 {
+    text-align: center;
+    color: #444;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.ticker-wrapper {
+    height: 420px;
+    overflow: hidden;
+}
+
+.ticker-content {
+    animation: scrollTicker 25s linear infinite;
+}
+
+@keyframes scrollTicker {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+.stock-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-bottom: 1px solid #151515;
+    font-family: 'Courier New', monospace;
+}
+
+.up { color: #00ff88; }
+.down { color: #ff4444; }
+
+/* 底部按钮 */
+.footer-nav {
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #050505;
+}
+
+.market-link {
+    padding: 15px 35px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.market-link:hover {
+    border-color: #00ff88;
+    color: #00ff88;
+}
